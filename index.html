@@ -1,1 +1,132 @@
-vamos a conquistar al mundocd silverfenix.github.io
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <?!= include('Stylesheet'); ?>
+    <?!= include('JavaScript'); ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<nav id="navbar_abm_notas" class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">REGISTRO INSTITUCIONAL DE TRAYECTORIAS EDUCATIVAS</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Notas</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Archivos</a>
+      <ul class="dropdown-menu">
+       <li><a class="dropdown-item" href="#scrollspyHeading4">Alumnos</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading3">Preceptoras</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading4">Materias</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading5">Escalas de calificacion</a></li>
+      </ul>
+    </li>
+        <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Login</a>
+    </li>
+  </ul>
+</nav>
+</br>
+
+    <form class="row g-3 bg-primary text-white"  id="Notas">
+        <h1>Notas</h1>
+   <!--       
+        <div>
+          <div class="form-group">
+                <label class="txt_blanco" for="preseptor_name"> PRECEPTORAS</label>
+                <select id="preseptor_name" name="preseptor_name">
+                    <? preseptor_name.forEach(preseptor_name=>{ ?>
+                    <option value="<?= preseptor_name ?>">
+                        <?= preseptor_name ?>
+                    </option>
+                    <? }) ?>
+                </select>
+                <div>
+
+                    <br />
+ -->                  
+                     <div class="col-md-4">
+                        <label class="form-label" for="year_number"> AÑO</label>
+                        <select class="form-select form-select-lg mb-3"  id="year_number" name="year_number" onchange="miMatter()">
+                            <? year_number.forEach(year_number=>{ ?>
+                            <option value="<?= year_number ?>">
+                                <?= year_number ?>
+                            </option>
+                            <? }) ?>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="commission_letter">COMISION</label>
+                        <select class="form-select form-select-lg mb-3"  id="commission_letter" name="commission_letter">
+                            <? commission_letter.forEach(commission_letter=>{ ?>
+                            <option value="<?=commission_letter ?>">
+                                <?= commission_letter ?>
+                            </option>
+                            <? }) ?>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="turn_letters">TURNO</label>
+                        <select  class="form-select form-select-lg mb-3"  id="turn_letters" name="turn_letters" onchange="miStudent()">
+                            <? turn_letters.forEach(turn_letters=>{ ?>
+                            <option value="<?= turn_letters ?>">
+                                <?= turn_letters ?>
+                            </option>
+                            <? }) ?>
+                        </select>
+                    </div>
+                        <!-- FIN 1ra fila -->
+                            <div class="col-md-12">
+                                <label class="form-label" for="student_name">ALUMNO</label>
+                                <select class="form-select form-select-lg mb-3" id="student_name" name="student_name" disabled>
+                                    <option value="op>">NOMBRES ALUMNOS</option>
+                                </select>
+                            </div>
+
+                        <!--FIN 2da fila -->
+                      <div class="row g-3">
+                          <div class="col-sm-7">
+                          <label class="form-label" for="matter_name">MATERIA</label>
+                          <select class="form-select form-select-lg mb-3"  id="matter_name" name="matter_name" disabled>
+                              <option value="op>">MATERIA</option>
+                          </select>
+                        </div>
+                        <div class="col-sm">
+                          <label class="form-label" for="qualification">CALIFICACION</label>
+                          <select class="form-select form-select-lg mb-3" id="qualification" name="qualification" onchange="miQualification()">
+                              <? qualification.forEach(qualification=>{ ?>
+                              <option value="<?= qualification ?>">
+                                  <?= qualification ?>
+                              </option>
+                              <? }) ?>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="input-group">
+                        <span class="input-group-text">Obs Alumno</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                      </div>
+                      
+                      </br>
+
+                     <div class="col-12">
+                      <button class="btn btn-lg btn-info" name="button">Grabar</button>
+                      </br>
+                    </div>
+                    
+
+
+                        </div>
+                        <!--FIN 3ra fila -->
+
+    </form>
+
+</body>
+
+</html>
